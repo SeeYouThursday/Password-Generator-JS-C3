@@ -1,12 +1,21 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var charNumber = 0;
+var specChar = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~\\";
+var numUse = "0123456789";
+var lowerLetters = "abcdefghijklmnopqrstuvwxyz";
+var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 // Write password to the #password input
 function writePassword() {
-  // var password = generatePassword();
+  var password = generatePassword();
+  {
+    charNumber, specChar, numUse, upper, lower;
+  }
+
   var passwordText = document.querySelector("#password");
 
-  window.alert("Here you will be presented with a number of criteria");
+  passwordText.value = password;
 
   let userNumber = prompt("Type the length of your new password:");
   // password length check
@@ -20,17 +29,16 @@ function writePassword() {
     window.alert("Next choose what type of characters you want to use");
   }
 
+  // let charSelect = function () {};
+
   //go again
-  var tryAgain = window.confirm("Try again?");
+  // var tryAgain = window.confirm("Try again?");
 
-  if (tryAgain) {
-    writePassword();
-  }
-
-  passwordText.value = password;
+  // if (tryAgain) {
+  //   writePassword();
+  // }
 }
 
 // call the overall function here
-writePassword();
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword());
