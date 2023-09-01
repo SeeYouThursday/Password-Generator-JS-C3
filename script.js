@@ -10,12 +10,14 @@ function writePassword() {
   // password length check
   if (userNumber < 8 || userNumber > 128) {
     window.alert("Password Needs to be between 8-128 characters in length!");
+  } else {
+    window.alert("Next choose what type of characters you want to use");
+  }
+  //go again
+  var tryAgain = window.confirm("Try again?");
 
-    var tryAgain = window.confirm("Try again?");
-
-    if (tryAgain) {
-      writePassword();
-    }
+  if (tryAgain) {
+    writePassword();
   }
 
   passwordText.value = password;
