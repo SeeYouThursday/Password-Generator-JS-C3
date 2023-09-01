@@ -6,6 +6,8 @@ function writePassword() {
   // var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
+  window.alert("Here you will be presented with a number of criteria");
+
   let userNumber = prompt("Type the length of your new password:");
   // password length check
   if (userNumber < 8 || userNumber > 128) {
@@ -13,6 +15,7 @@ function writePassword() {
   } else {
     window.alert("Next choose what type of characters you want to use");
   }
+
   //go again
   var tryAgain = window.confirm("Try again?");
 
