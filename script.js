@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var charNumber = 0;
 // Write password to the #password input
 function writePassword() {
   // var password = generatePassword();
@@ -12,6 +12,10 @@ function writePassword() {
   // password length check
   if (userNumber < 8 || userNumber > 128) {
     window.alert("Password Needs to be between 8-128 characters in length!");
+  } else if ((userNumber) => 8 || userNumber <= 128) {
+    window.alert("great!");
+    charNumber + userNumber;
+    console.log(charNumber);
   } else {
     window.alert("Next choose what type of characters you want to use");
   }
