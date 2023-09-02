@@ -8,7 +8,7 @@ var numUse = "0123456789";
 var lowerLetters = "abcdefghijklmnopqrstuvwxyz";
 var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-// Write password to the #password input
+// Write password to the #password input 
 function writePassword() {
   //parameter check here
   let userNumber = prompt("Type the length of your new password:");
