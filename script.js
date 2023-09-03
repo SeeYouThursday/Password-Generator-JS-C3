@@ -1,36 +1,39 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
 
+var randomPassword = "";
 var charSet = "";
 var charNumber = 0;
+
+// passCriteria = {
+//   specChar: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~\\",
+//   numUse: "0123456789",
+//   lowerLetters: "abcdefghijklmnopqrstuvwxyz",
+//   upperLetters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+// };
+
 var specChar = "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~\\";
 var numUse = "0123456789";
 var lowerLetters = "abcdefghijklmnopqrstuvwxyz";
 var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-// Write password to the #password input 
+// Write password to the #password input
 function writePassword() {
   //parameter check here
   let userNumber = prompt("Type the length of your new password:");
   // password length check
-  if (userNumber < 8 || userNumber > 128) {
-    window.alert("Password Needs to be between 8-128 characters in length!");
-  } else if ((userNumber) => 8 || userNumber <= 128) {
+  if ((userNumber) => 8 || userNumber <= 128) {
     window.alert("great!");
     charNumber += userNumber;
     console.log(charNumber);
   } else {
-    window.alert("Next choose what type of characters you want to use");
+    window.alert("Password Needs to be between 8-128 characters in length!");
+    writePassword();
   }
-
-  // let charSelect = function () {};
 
   if (confirm("Do you want to use special characters?")) {
     charSet = charSet + specChar;
     console.log(charSet);
   }
-
-  console.log(charSet, userNumber);
 
   if (confirm("Do you want to use numbers in your password?")) {
     charSet = charSet + numUse;
@@ -47,26 +50,24 @@ function writePassword() {
     console.log(charSet);
   }
 
-  console.log(charSet);
-  //go again
-  // var tryAgain = window.confirm("Try again?");
+  console.log(charSet.length);
 
-  // if (tryAgain) {
-  //   writePassword();
-  // }
-
-  var password = function generatePassword() {
-    for (var i = 0; i < charNumber; i++) {
-      charSet[Math.floor(Math.random() * charSet.length)];
+  // call the overall function here\
+  generatePassword(charNumber);
+  function generatePassword(charNumber) {
+    var randomPassword = "";
+    charSet;
+    for (var i, i = 0; i < charSet.length; i++) {
+      randomPassword += charSet[Math.floor(Math.random() * charNumber)];
     }
-    console.log(charSet);
-  };
-
+    console.log(randomPassword);
+  }
+  //currently returns a pass that is charSet.length - 1
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = randomPassword;
 }
 
-// call the overall function here
 // Add event listener to generate button
+var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword());
