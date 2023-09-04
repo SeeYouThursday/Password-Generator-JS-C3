@@ -54,20 +54,21 @@ function writePassword() {
 
   // call the overall function here\
   generatePassword(charNumber);
-  function generatePassword(charNumber) {
+  function generatePassword() {
     var randomPassword = "";
     charSet;
-    for (var i, i = 0; i < charSet.length; i++) {
+    for (var i, i = 0; i < charNumber; i++) {
       randomPassword += charSet[Math.floor(Math.random() * charNumber)];
     }
     console.log(randomPassword);
   }
-  //currently returns a pass that is charSet.length - 1
+  //currently returns a pass that is charSet.length - 14
   var passwordText = document.querySelector("#password");
 
   passwordText.value = randomPassword;
 }
 
+console.log(randomPassword);
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword());
