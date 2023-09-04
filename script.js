@@ -3,6 +3,7 @@
 var randomPassword = "";
 var charSet = "";
 var charNumber = 0;
+// lettercount resource
 
 // passCriteria = {
 //   specChar: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~\\",
