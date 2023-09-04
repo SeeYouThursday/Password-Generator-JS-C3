@@ -1,5 +1,5 @@
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+
 var randomPassword = "";
 
 // passCriteria = {
@@ -27,7 +27,6 @@ function writePassword() {
     console.log(charNumber);
   } else {
     window.alert("Password Needs to be between 8-128 characters in length!");
-    writePassword();
   }
 
   if (confirm("Do you want to use special characters?")) {
@@ -66,10 +65,10 @@ function writePassword() {
 
     passwordText.innerHTML = randomPassword;
   }
-  //currently returns a pass that is charSet.length - 14
 }
 
 console.log(randomPassword);
 // Add event listener to generate button
-
-generateBtn.addEventListener("click", writePassword());
+var generateBtn = document.querySelector("#generate");
+generateBtn.onclick = writePassword;
+// generateBtn.addEventListener("click", writePassword());
