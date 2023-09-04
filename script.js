@@ -1,8 +1,6 @@
 // Assignment Code
-
+var generateBtn = document.querySelector("#generate");
 var randomPassword = "";
-var charSet = "";
-var charNumber = 0;
 
 // passCriteria = {
 //   specChar: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~\\",
@@ -19,6 +17,8 @@ var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 // Write password to the #password input
 function writePassword() {
   //parameter check here
+  var charSet = "";
+  var charNumber = 0;
   let userNumber = prompt("Type the length of your new password:");
   // password length check
   if ((userNumber) => 8 || userNumber <= 128) {
@@ -61,14 +61,15 @@ function writePassword() {
       randomPassword += charSet[Math.floor(Math.random() * charNumber)];
     }
     console.log(randomPassword);
+
+    var passwordText = document.querySelector("#password");
+
+    passwordText.innerHTML = randomPassword;
   }
   //currently returns a pass that is charSet.length - 14
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = randomPassword;
 }
 
 console.log(randomPassword);
 // Add event listener to generate button
-var generateBtn = document.querySelector("#generate");
+
 generateBtn.addEventListener("click", writePassword());
