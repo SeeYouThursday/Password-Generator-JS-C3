@@ -42,7 +42,6 @@ function writePassword() {
   if (confirm("Do you want to use uppercase letters in your password?")) {
     charSet = charSet.concat(upperLetters);
     console.log(charSet);
-    
   }
 
   // Validating that user has selected at least one password criteria
