@@ -1,11 +1,4 @@
 // Assignment Code
-// passCriteria = {
-//   specChar: "!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~\\",
-//   numUse: "0123456789",
-//   lowerLetters: "abcdefghijklmnopqrstuvwxyz",
-//   upperLetters: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-// };
-
 // Write password to the #password input
 function writePassword() {
   //parameter check here
@@ -56,15 +49,15 @@ function writePassword() {
     var randomPassword = "";
     // define rp outside of loop for scope reasons
     for (var i, i = 0; i < charNumber; i++) {
-      let generatedIndex = Math.floor(Math.random() * characterArray.length);
+      var generatedIndex = Math.floor(Math.random() * characterArray.length);
       // random number assigned to variable maintain ability to update - also it looked prettier.
-      let yourMom = characterArray[generatedIndex];
+      var yourMomsRandomPass = characterArray[generatedIndex];
       // helps to visualize what is happening above
       console.group("poop");
       console.log("index", generatedIndex);
-      console.log("value", yourMom);
+      console.log("value", yourMomsRandomPass);
       console.groupEnd();
-      randomPassword = randomPassword.concat(yourMom);
+      randomPassword = randomPassword.concat(yourMomsRandomPass);
     }
 
     console.log(randomPassword);
@@ -73,6 +66,7 @@ function writePassword() {
 
     passwordText.innerHTML = randomPassword;
   }
+
   generatePassword();
 }
 
