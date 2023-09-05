@@ -47,7 +47,7 @@ function writePassword() {
   // Validating that user has selected at least one password criteria
   if (charSet === "") {
     window.alert(
-      "You must choose types of characters to use in your password!"
+      "You must choose at least one type of character to use in your password!"
     );
     return;
   }
@@ -61,15 +61,14 @@ function writePassword() {
       var generatedIndex = Math.floor(Math.random() * characterArray.length);
       // random number assigned to variable maintain ability to update - also it looked prettier.
       var yourMomsRandomPass = characterArray[generatedIndex];
+      // yourMomsRandomPass will provide the value of the generated index
       // helps to visualize what is happening above
-      console.group("poop");
+      console.group("insights");
       console.log("index", generatedIndex);
       console.log("value", yourMomsRandomPass);
       console.groupEnd();
       randomPassword = randomPassword.concat(yourMomsRandomPass);
     }
-
-    console.log(randomPassword);
 
     var passwordText = document.querySelector("#password");
 
