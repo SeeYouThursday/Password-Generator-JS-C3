@@ -8,17 +8,22 @@ function writePassword() {
   var lowerLetters = "abcdefghijklmnopqrstuvwxyz";
   var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var charNumber = 0;
-  let userNumber = prompt("Type the length of your new password:");
-  // password length check
-  if (userNumber >= 8 || userNumber <= 128) {
-    window.alert("great!");
+  let userNumber = prompt(
+    "Type the length of your new password(between 8-128 characters):"
+  );
+
+  // password length validation
+  if (userNumber >= 8 && userNumber <= 128) {
+    window.alert("Great!");
     charNumber += userNumber;
     console.log(charNumber);
   } else {
-    window.alert("Password Needs to be between 8-128 characters in length!");
-    return;
+    return window.alert(
+      "Password Needs to be between 8-128 characters in length! Try again!"
+    );
   }
 
+  // user choice of what character sets to use in password.
   if (confirm("Do you want to use special characters?")) {
     charSet = charSet.concat(specChar);
     console.log(charSet);
@@ -39,9 +44,13 @@ function writePassword() {
     console.log(charSet);
   }
 
-  console.log(charSet.length);
-
-  // call the overall function here\
+  // Validating that user has selected at least one password criteria
+  if (charSet === "") {
+    window.alert(
+      "You must choose types of characters to use in your password!"
+    );
+    return;
+  }
 
   function generatePassword() {
     var characterArray = charSet.split("");
